@@ -1,0 +1,180 @@
+.main-page {
+        background: url(back.jpg) no-repeat center center fixed;
+		margin:0;
+		-webkit-background-size: cover;
+		-moz-background-size: cover;
+		-o-background-size: cover;
+		background-size: cover;
+	}
+.container{
+	background-color: initial;
+}
+
+
+.input_text{
+	width:400px;
+	height:40px;
+	border-radius:3px;
+	padding:3px;
+	float:left;
+	position:absolute;
+	left:0;
+	right:0;
+	margin-left:auto;
+	margin-right:auto;
+	font-family: 'Oswald', sans-serif;
+}
+
+.submit{
+	background-color:black;
+	color:white;
+	padding:5px;
+	width:100px;
+	height:40px;
+	border:1px solid black;
+	margin-left:10px;
+	font-family: 'Oswald', sans-serif;
+	position:relative;
+	left:67%;
+	border:2px solid #365A92;
+}
+
+.submit:hover{
+	background-color:white;
+	color:black;
+	-moz-transition: border-radius 0.3s ease-in-out;
+	-o-transition: border-radius 0.3s ease-in-out;
+	-webkit-transition: border-radius 0.3s ease-in-out;
+	transition: border-radius 0.3s ease-in-out;
+	font-family: 'Oswald', sans-serif;
+	border:none;
+}
+
+.current{
+	margin-top:50px;
+}
+.current_h1{
+	font-size:76px;
+	color:white;
+	font-family: 'Roboto', sans-serif;
+}
+
+.current_h2{
+	margin:0;
+	font-family: 'Roboto', sans-serif;
+	color:white;
+}
+
+.weather_report{
+	position:absolute;
+	top:375px;
+	right:20%;
+	height:900px;
+	width:710px;
+	background-color:transparent;
+}
+
+#location{
+	 position:relative;
+	 top:0px;
+	 left:0px;
+	 height:50px;
+	 width:700px;
+	 padding:7px;
+}
+
+#desc{
+	margin-top:30px;
+	position:relative;
+	top:0px;
+	left:0px;
+	height:180px;
+	width:340px;
+}
+
+#parameters{
+	position:relative;
+	top:-182px;
+	left:358px;
+	height:180px;
+	width:340px;
+}
+
+.sidebox{
+	padding:10px;
+
+	color:white;
+	border-radius:5px;
+	border-top:1px solid #374B4F;
+	border-bottom:1px solid #374B4F;
+	margin:3px;
+	text-align:center;
+	font-family: 'Open Sans Condensed', sans-serif;
+	font-size:20px;
+	background: -webkit-linear-gradient(rgba(5,16,21,0.5), rgba(11,36,43,0.5)); /* For Safari 5.1 to 6.0 */
+	background: -o-linear-gradient(rgba(5,16,21,0.5), rgba(11,36,43,0.5)); /* For Opera 11.1 to 12.0 */
+	background: -moz-linear-gradient(rgba(5,16,21,0.5), rgba(11,36,43,0.5)); /* For Firefox 3.6 to 15 */
+	background: linear-gradient(rgba(5,16,21,0.5), rgba(11,36,43,0.5));
+}
+
+#forecast{
+	position:relative;
+	top:-180px;
+	height:280px;
+	float:left;
+	background-color:transparent;
+}
+
+.result{
+	margin:6px; 
+	padding:2px 5px 0 5px;
+	background: -webkit-linear-gradient(rgba(5,16,21,0.5), rgba(11,36,43,0.5)); /* For Safari 5.1 to 6.0 */
+	background: -o-linear-gradient(rgba(5,16,21,0.5), rgba(11,36,43,0.5)); /* For Opera 11.1 to 12.0 */
+	background: -moz-linear-gradient(rgba(5,16,21,0.5), rgba(11,36,43,0.5)); /* For Firefox 3.6 to 15 */
+	background: linear-gradient(rgba(5,16,21,0.5), rgba(11,36,43,0.5));
+	height:275px;
+	width:220px;
+	color:white;
+	font-family: 'Open Sans Condensed', sans-serif;
+	font-size:16px;
+	text-align:center;
+	float:left;
+}
+
+#weather_container{
+	margin-top:30px;
+}
+
+td{
+	padding:10px 25px 2px 25px;
+	font-size:16px;
+}
+
+.alt
+{
+   padding:5px;	
+   margin:30px;
+   color:#CCCCCC;
+}
+
+p.normal{
+	font-size:18px;
+}
+
+.p22{
+	font-size:22px;
+}
+
+.p22side{
+	padding-left:45px;
+	margin-right:5px;
+	font-size:22px;
+	float:left;
+}
+
+.clear{
+	width: 100%;
+	height: 1px;
+	margin: 0 0 -1px;
+	clear: both;
+}
