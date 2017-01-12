@@ -2,9 +2,9 @@ var app = angular.module('myapp', [])
 .controller('MyModuleWeather', function($scope, $http, $log) {
   // Set default values for our form fields.
   $scope.units = 'metric';
-  $scope.city= 'Raleigh';
+  $scope.city= 'Bangalore';
   // Define a function to process form submission.
-  $scope.change = function() {
+  $scope.changeCity = function() {
     // Fetch the data from the public API through JSONP.
     // See http://openweathermap.org/API#weather.
 	
@@ -21,8 +21,11 @@ var app = angular.module('myapp', [])
 		  $scope.currentMax=data.main.temp_max;
 		  $scope.currentMin=data.main.temp_min;
 		  $scope.currentCity=data.name;
+      $scope.currentCountry=data.sys.country;
 		  $scope.currentDate=data.dt;
 		  $scope.currentDescription=data.weather[0].description;
+      $scope.currentDescriptionImage = data.weather[0].icon;
+      $scope.currentVisibility = data.visibility
 		  $scope.sunrise=data.sys.sunrise;
 		  $scope.sunset=data.sys.sunset;
 		  $scope.windspeed=data.wind.speed;
@@ -54,5 +57,5 @@ var app = angular.module('myapp', [])
   };
  
   // Trigger form submission for first load.
-		$scope.change();
+		$scope.changeCity();
 });

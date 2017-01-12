@@ -166,7 +166,7 @@ p.normal{
 }
 
 .p22side{
-	padding-left:45px;
+	padding-right : 20px;
 	margin-right:5px;
 	font-size:22px;
 	float:left;
@@ -177,4 +177,8 @@ p.normal{
 	height: 1px;
 	margin: 0 0 -1px;
 	clear: both;
+}
+
+.oddColor{
+	background: teal;
 }

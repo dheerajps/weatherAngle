@@ -18,68 +18,103 @@
 		<div class="row">
 			    <div class="input-field col s4">
 			      <i class="material-icons prefix">location_city</i>
-			      <input value="Bangalore" id="cityName" type="text" class="validate">
+			      <input value="Bangalore" id="cityName" type="text" class="validate" ng-model="city">
 			      <label class="active" for="cityName">CITY </label>
 			    </div>
 			    <div class="input-field col s2">
-			    <a class="waves-effect waves-light btn btn-sm"><i class="material-icons left">cloud</i>GO</a>
+			    <a class="waves-effect waves-light btn btn-sm" ng-click="changeCity(city)"><i class="material-icons left">cloud</i>GO</a>
 			    </div>
   		</div>
-	 <!--  <input class="input_text" type="text" ng-model="city" placeholder="Enter City"/> -->
-	  
-			  <!-- <div class="current">
-				<h1 class="current_h1"><b>{{currentTemp |number:0}} &#8451;<b></h1>
-				<h2 class="current_h2">H: {{currentMax |number:0}} &#8451;</h2>
-				<h2 class="current_h2" style="color:#CCCCCC;">L: {{currentMin |number:0}} &#8451;</h2>
-			  </div> -->
-		
+  		</div>
         <div class="row">
-			  <div class="col s12 m7">    
-			    <div class="card horizontal">
-			      <div class="card-image">
-			        <img src="https://maps.googleapis.com/maps/api/place/textsearch/xml?query=Sydney">
-			      </div>
-			      <div class="card-stacked">
-			        <div class="card-content">
-			          <h3 class="header">{{currentDate *1000 | date:'dd MMMM'}}, {{currentCity}}.</h3>
-			          <p>{{currentDescription | uppercase}}</p>
-			        </div>
-			      </div>
+        	<div class="col s12">
+			    <div class="col s6">    
+				    <div class="card small horizontal ">
+				      <div class="card-image">
+				        <img src="background.jpg" >
+				      </div>
+				      <div class="card-stacked">
+				        <div class="card-content">
+				          <h4 class="header">{{currentDate *1000 | date:'dd MMMM'}}</h4>
+				          <h5>{{currentCity}},{{currentCountry}}</h5>
+				          <p>{{currentDescription | uppercase}}</p>
+				          <img class="z-depth-1" ng-src="http://openweathermap.org/img/w/{{currentDescriptionImage}}.png" >
+				          <h6>Visibility : {{currentVisibility * 0.000621371192 |number : 2}} mi</h6>
+				          <br>
+				          <h6><a ng-href="https://www.google.com/maps/search/{{currentCity}}" target="_blank">CITY MAP </a> </h6>
+				        </div>
+				      </div>
+				    </div>
 			    </div>
+			    <div class="col s6">
+			    <table class="centered">
+			    		<thead>
+				          <tr>
+				              <th data-field="id">Current</th>
+				              <th data-field="name">Current MAX</th>
+				              <th data-field="price">Current MIN</th>
+				          </tr>
+				        </thead>
+
+				        <tbody>
+				          <tr>
+				            <td>{{currentTemp |number:0}} &#8451;</td>
+				            <td>H: {{currentMax |number:0}} &#8451;</td>
+				            <td>L: {{currentMin |number:0}} &#8451;</td>
+				          </tr>
+				         </tbody>
+				        <thead>
+				          <tr>
+				              <th data-field="id">Sunrise</th>
+				              <th data-field="name">Sunset</th>
+				              <th data-field="price">Windspeed</th>
+				          </tr>
+				        </thead>
+
+				        <tbody>
+				          <tr>
+				            <td>{{sunrise*1000 | date: 'hh:mm'}} am</td>
+				            <td>{{sunset*1000 | date: 'hh:mm'}} pm</td>
+				            <td>{{windspeed |number:0}} Km/h</td>
+				          </tr>
+				         </tbody>
+
+				         <thead>
+				          <tr>
+				              <th data-field="id">Direction</th>
+				              <th data-field="name">Pressure</th>
+				              <th data-field="price">Humidity</th>
+				          </tr>
+				        </thead>
+
+				        <tbody>
+				          <tr>
+				            <td>{{direction |number:0}} &#176;</td>
+				            <td>{{pressure}} mm</td>
+				            <td>{{humidity}} %</td>
+				          </tr>
+				         </tbody> 
+     		    </table>
+			  	</div>
 			  </div>
 		</div>
-			  <!-- <div class="sidebox" id="desc">
-				<p style="color:#CCCCCC;">Weather Conditions</p>
-				<br/>
-				<p></p>
-			  </div> -->
+		<div class="row">
 			  
-			  <div class="sidebox" id="parameters">
-				<table border="0">
-					<tr class="alt"><td>Sunrise</td><td>Sunset</td><td>Windspeed</td></tr>
-					<tr ><td>{{sunrise*1000 | date: 'hh:mm'}} am</td><td>{{sunset*1000 | date: 'hh:mm'}} pm</td><td>{{windspeed |number:0}} Km/h</td></tr>
-					
-					<tr class="alt"><td>Direction</td><td>Pressure</td><td>Humidity</td></tr>
-					<tr><td>{{direction |number:0}} &#176;</td><td>{{pressure}} mm</td><td>{{humidity}} %</td></tr>
-					
-				</table>
-				<p style="font-size:12px;text-align:left;padding:5px;">*All times are in Local Time Zone of the browser</p>
-			  </div>
-			  
-			  <div id="forecast">
-				<div class="result" ng-repeat="n in [1,2,3,4,5,6] track by $index">
+			  <div class="col s12">
+				<div class="card-panel col s4 z-depth-5" ng-repeat="n in [1,2,3,4,5,6] track by $index" ng-class-odd="'oddColor'">
 					  <p class="p22">{{list[n].dt*1000 | date: 'dd MMMM'}}</p>
 					  <img ng-src="http://openweathermap.org/img/w/{{list[n].weather[0].icon}}.png" height="75px" width="75px">	
 					  <p>{{list[n].weather[0].description | uppercase}}</p>
-					  <p class="p22side">{{list[n].temp.max |number:0}} &#8451;</p><p class="p22side" style="color:#CCCCCC";>{{list[n].temp.min |number:0}} &#8451;</p>
+					  <p class="p22side">MAX : {{list[n].temp.max |number:0}} &#8451;</p>
+					  <p class="p22side">MIN : {{list[n].temp.min |number:0}} &#8451;</p>
 					  <div class="clear"></div>
 					  <p>Wind speed: {{list[n].speed |number:0}} Km/h</p>
 					  <p>Humidity: {{list[n].humidity |number:0}}%</p>
 				</div>	
-			  </div>
+			  </div> 
+		</div>
 		</div>	  	  
 	</div>
-</div>
 
 	<div ng-view></div>
 	
