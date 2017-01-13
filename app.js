@@ -1,5 +1,5 @@
-var app = angular.module('myapp', [])
-.controller('MyModuleWeather', function($scope, $http, $log) {
+var app = angular.module('weatherApp', [])
+.controller('weatherController', function($scope, $http, $log) {
   // Set default values for our form fields.
   $scope.units = 'metric';
   $scope.city= 'Bangalore';
